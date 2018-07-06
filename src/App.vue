@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="layout">
-    <tab-bar></tab-bar>
+    <!--<tab-bar></tab-bar>-->
     <div class="main-container">
       <router-view/>
     </div>
-    <nav-bar></nav-bar>
+    <!--<nav-bar></nav-bar>-->
   </div>
 </template>
 
