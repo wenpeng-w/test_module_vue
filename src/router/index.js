@@ -18,6 +18,7 @@ import vueXlsxTable from '@/components/view/test/vue-xlsx-table';
 import screenOrientation from '@/components/view/test/screen-orientation';
 import promise from '@/components/view/test/promise';
 import animation from '@/components/view/test/animation';
+import SVG from '@/components/view/test/SVG';
 // 404
 import NotFoundComponent from '@/components/view/404';
 
@@ -88,6 +89,11 @@ export default new Router({
       path: '/animation',
       name: 'animation',
       component: animation
+    },
+    {
+      path: '/SVG',
+      name: 'SVG',
+      component: SVG
     }
   ]
 });

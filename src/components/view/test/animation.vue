@@ -72,6 +72,7 @@
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
   }
+
   /**
    * 可以不设置 enter-right-enter-to 和 enter-right-leave 类
    * *-enter-to 进入过度的结束状态

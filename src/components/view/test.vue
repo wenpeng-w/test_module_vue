@@ -17,7 +17,8 @@
           {title: 'echarts'},
           {title: 'screen-orientation'},
           {title: 'promise'},
-          {title: 'animation'}
+          {title: 'animation'},
+          {title: 'SVG'}
         ]
       };
     },
