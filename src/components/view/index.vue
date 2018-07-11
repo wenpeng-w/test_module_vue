@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    首页{{userInfo}}
+    首页
   </div>
 </template>
 

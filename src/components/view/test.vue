@@ -16,7 +16,8 @@
           {title: 'amap'},
           {title: 'echarts'},
           {title: 'screen-orientation'},
-          {title: 'promise'}
+          {title: 'promise'},
+          {title: 'animation'}
         ]
       };
     },
