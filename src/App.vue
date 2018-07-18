@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="layout">
-    <!--<tab-bar></tab-bar>-->
+    <tab-bar></tab-bar>
     <div class="main-container">
       <router-view/>
     </div>
-    <!--<nav-bar></nav-bar>-->
+    <nav-bar></nav-bar>
   </div>
 </template>
 
@@ -32,5 +32,6 @@
   .main-container {
     position: relative;
     padding: 0.3rem 0.24rem;
+    animation: all linear 20ms;
   }
 </style>

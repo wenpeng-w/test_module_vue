@@ -16,6 +16,8 @@
     <transition name="enter-bottom">
       <div v-if="showBottom" class="animation-text ani-bottom"></div>
     </transition>
+
+    <div class="btn-active">点击态按钮</div>
   </div>
 </template>
 
@@ -98,4 +100,18 @@
   .enter-bottom-enter-active, .enter-bottom-leave-active { transition: all .6s ease-in-out; }
   .enter-bottom-enter-to, .enter-bottom-leave { bottom: 50%; opacity: 1; }
   .enter-bottom-enter, .enter-bottom-leave-to { bottom: -100%; opacity: 0; }
+
+  .btn-active {
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #333333;
+    &:active {
+      background-color: rgba(0, 0, 0, .45);
+      transition-property: background-color;
+      transition-delay: 0.02s;
+    }
+  }
 </style>
