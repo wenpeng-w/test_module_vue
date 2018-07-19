@@ -22,6 +22,7 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex';
   export default {
     name: 'animation',
     data () {
@@ -32,7 +33,14 @@
         showBottom: false
       };
     },
+    created () {
+      this.setHeader();
+    },
     methods: {
+      ...mapMutations(['SET_HEADER']),
+      setHeader () {
+        this.SET_HEADER('ANIMATION');
+      },
       toggleEnterLeft () {
         this.showLeft = !this.showLeft;
       },

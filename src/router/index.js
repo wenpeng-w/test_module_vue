@@ -19,6 +19,7 @@ import screenOrientation from '@/components/view/test/screen-orientation';
 import promise from '@/components/view/test/promise';
 import animation from '@/components/view/test/animation';
 import SVG from '@/components/view/test/SVG';
+import uploadImg from '@/components/view/test/upload-img';
 // 404
 import NotFoundComponent from '@/components/view/404';
 
@@ -28,7 +29,7 @@ export default new Router({
   routes: [
     {
       path: '*',
-      name: '/404',
+      name: 'error',
       component: NotFoundComponent
     },
     {
@@ -94,6 +95,11 @@ export default new Router({
       path: '/SVG',
       name: 'SVG',
       component: SVG
+    },
+    {
+      path: '/upload-img',
+      name: 'upload-img',
+      component: uploadImg
     }
   ]
 });

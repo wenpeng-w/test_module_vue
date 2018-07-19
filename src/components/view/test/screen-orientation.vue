@@ -10,6 +10,7 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex';
   import echart from './echarts';
   export default {
     name: 'screen-orientation',
@@ -19,6 +20,9 @@
         width: 0,
         height: 0
       };
+    },
+    created () {
+      this.setHeader();
     },
     mounted () {
       this.turnScreen();
@@ -43,6 +47,10 @@
       };
     },
     methods: {
+      ...mapMutations(['SET_HEADER']),
+      setHeader () {
+        this.SET_HEADER('SCREEN-ORIENTATION');
+      },
       turnScreen () {
         let _width = this.$refs.screen.clientWidth;
         let _height = this.$refs.screen.clientHeight;

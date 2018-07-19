@@ -14,6 +14,7 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex';
   export default {
     name: 'svg-component',
     data () {
@@ -21,7 +22,15 @@
         svgPath: []
       };
     },
-    methods: {}
+    created () {
+      this.setHeader();
+    },
+    methods: {
+      ...mapMutations(['SET_HEADER']),
+      setHeader () {
+        this.SET_HEADER('SVG');
+      }
+    }
   };
 </script>
 

@@ -18,7 +18,8 @@
           {title: 'screen-orientation'},
           {title: 'promise'},
           {title: 'animation'},
-          {title: 'SVG'}
+          {title: 'SVG'},
+          {title: 'upload-img'}
         ]
       };
     },

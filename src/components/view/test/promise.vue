@@ -6,6 +6,7 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex';
   export default {
     name: 'promise',
     computed: {
@@ -13,7 +14,14 @@
         return false;
       }
     },
+    created () {
+      this.setHeader();
+    },
     methods: {
+      ...mapMutations(['SET_HEADER']),
+      setHeader () {
+        this.SET_HEADER('PROMISE');
+      },
       printText (resolve, reject) {
         setTimeout(function () {
         }, 1000);

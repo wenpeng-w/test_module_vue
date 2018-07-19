@@ -8,6 +8,7 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex';
   const echarts = require('echarts');
   export default {
     name: 'echarts',
@@ -15,11 +16,16 @@
       return {};
     },
     created () {
+      this.setHeader();
       this.$nextTick(() => {
         this.initEcharts();
       });
     },
     methods: {
+      ...mapMutations(['SET_HEADER']),
+      setHeader () {
+        this.SET_HEADER('ECHARTS');
+      },
       initEcharts () {
         let myChart = echarts.init(this.$refs.echartContainer);
         let lineColor = ['#ff0000', '#00ff00', '#ffd700', '#000000'];

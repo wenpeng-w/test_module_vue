@@ -51,7 +51,7 @@
     methods: {
       ...mapMutations(['SET_HEADER']),
       setHeader () {
-        this.SET_HEADER('首页');
+        this.SET_HEADER('高德地图');
       },
       toService () {
         this.$router.push({
