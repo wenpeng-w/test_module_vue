@@ -40,18 +40,16 @@ export default {
       if (!files || files.length === 0) return;
       files = Array.from(files);
       files.forEach(file => {
+        // 方法1
+        this.imgList.push(window.URL.createObjectURL(file));
+
+        // 方法2
         // let reader = new FileReader();
         // reader.onloadend = () => {
         //   console.log('onloadend');
         //   this.imgList.push(reader.result);
         // };
         // reader.readAsDataURL(file);
-        this.imgList.push(file.lastModifiedDate);
-        this.imgList.push(file.size);
-        this.imgList.push(file.type);
-        this.imgList.push(window.URL.createObjectURL(file));
-        console.log(JSON.parse(file));
-        // this.imgList.push(window.URL.createObjectURL(file));
       });
     }
   }
