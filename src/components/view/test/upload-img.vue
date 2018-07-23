@@ -71,4 +71,15 @@ export default {
     height: 100%;
     cursor: pointer;
   }
+  .form-cell {
+    margin: 20px 0;
+  }
+  input {
+    border: 1px solid #d5d5d5;
+  }
+  .submit-btn {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+  }
 </style>
