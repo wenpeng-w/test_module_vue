@@ -5,8 +5,8 @@
       <van-button type="primary" size="small">upload image</van-button>
       <input class="file-hide" @change="upload" multiple type="file" accept="image/*">
     </div>
-    <div>
-      <p v-for="(item, index) in imgList" :key="index">{{item}}</p>
+    <div v-if="pics.length > 0" class="img-container">
+      <div v-for="(pic, index) in pics" :key="index" class="img-item"><img :src="pic" :alt="`pic_${index}`"></div>
     </div>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
   name: 'upload-img',
   data () {
     return {
-      imgList: []
+      pics: []
     };
   },
   created () {
@@ -41,13 +41,13 @@ export default {
       files = Array.from(files);
       files.forEach(file => {
         // 方法1
-        this.imgList.push(window.URL.createObjectURL(file));
+        this.pics.push(window.URL.createObjectURL(file));
 
         // 方法2
         // let reader = new FileReader();
         // reader.onloadend = () => {
         //   console.log('onloadend');
-        //   this.imgList.push(reader.result);
+        //   this.pics.push(reader.result);
         // };
         // reader.readAsDataURL(file);
       });
@@ -61,6 +61,26 @@ export default {
   .upload-image {
     position: relative;
     display: inline-block;
+  }
+  .img-container {
+    overflow: hidden;
+    margin: 1% 0;
+    font-size: 0;
+  }
+  .img-item {
+    width: 20%;
+    padding-top: 20%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    img {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 90%;
+      height: 90%;
+      background-color: #f5f5f5;
+    }
   }
   .file-hide {
     position: absolute;
