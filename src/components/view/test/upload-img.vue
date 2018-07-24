@@ -40,7 +40,6 @@ export default {
      * 方法2. FileReader() 读取文件
      */
     uploadImage (e) {
-      console.log(e);
       let files = e.target.files;
       if (!files || files.length === 0) return;
       files = Array.from(files);
@@ -64,7 +63,6 @@ export default {
      * @param e
      */
     uploadText (e) {
-      console.log(e);
       let files = e.target.files[0];
       if (!files || files.length === 0) return;
       let reader = new FileReader();
