@@ -12,6 +12,7 @@
     <div v-if="pics.length > 0" class="img-container">
       <div v-for="(pic, index) in pics" :key="index" class="img-item"><img :src="pic" :alt="`pic_${index}`"></div>
     </div>
+    <div>{{text}}</div>
   </div>
 </template>
 
@@ -21,7 +22,8 @@ export default {
   name: 'upload-img',
   data () {
     return {
-      pics: []
+      pics: [],
+      text: ''
     };
   },
   created () {
@@ -67,7 +69,7 @@ export default {
       if (!files || files.length === 0) return;
       let reader = new FileReader();
       reader.onloadend = () => {
-        this.pics.push(reader.result);
+        this.text = reader.result;
       };
       reader.readAsText(files, 'gb2312');
     }
