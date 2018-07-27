@@ -24,6 +24,7 @@
       },
       printText (resolve, reject) {
         setTimeout(function () {
+          console.log('2');
         }, 1000);
       }
     }
