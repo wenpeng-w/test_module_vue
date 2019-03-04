@@ -19,7 +19,11 @@
           {title: 'promise'},
           {title: 'animation'},
           {title: 'SVG'},
-          {title: 'upload-img'}
+          {title: 'upload-img'},
+          {title: 'form'},
+          {title: 'screen'},
+          {title: 'githubUserinfo'},
+          {title: 'overscroll'}
         ]
       };
     },
@@ -47,21 +51,22 @@
     border: 1px solid #ccc;
     border-radius: .125rem;
     color: #4fc08d;
+    cursor: pointer;
   }
 
   .black-10 {
     color: rgba(0,0,0,.1);
   }
-  .hover-black:focus, .hover-black:hover {
+  .hover-black:focus, .hover-black:active {
     color: #000;
   }
-  .link, .link:active, .link:focus, .link:hover, .link:link, .link:visited {
+  .link, .link:active, .link:focus, .link:link, .link:visited {
     transition: color .15s ease-in;
   }
   .demo-item {
     margin: 0 10px 10px 0;
   }
-  .hover-bg-black-10:focus, .hover-bg-black-10:hover {
+  .hover-bg-black-10:focus, .hover-bg-black-10:active, .hover-bg-black-10:hover {
     background-color: rgba(0,0,0,.1);
   }
 </style>

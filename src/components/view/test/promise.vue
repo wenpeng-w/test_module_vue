@@ -25,6 +25,8 @@
       printText (resolve, reject) {
         setTimeout(function () {
           console.log('2');
+          console.log(resolve);
+          console.log(reject);
         }, 1000);
       }
     }
@@ -41,7 +43,7 @@
     height: 0.44rem;
     border-right: 0.02rem solid #ccc;
     vertical-align: text-bottom;
-    animation: flashing 1s infinite steps(1, start);
+    animation: flashing 1s infinite steps(1, end);
     transform: translate3d(0, 0, 0);
   }
   @keyframes flashing {

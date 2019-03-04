@@ -1,10 +1,11 @@
 <template>
   <div class="main">
-    首页
+    首页{{userInfo}}
   </div>
 </template>
 
 <script>
+  import $ from 'jquery';
   import { mapMutations, mapGetters } from 'vuex';
 
   export default {

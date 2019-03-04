@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import $ from 'jquery';
 import { mapMutations } from 'vuex';
 export default {
   name: 'upload-img',
@@ -29,6 +30,8 @@ export default {
   created () {
     this.setHeader();
   },
+  mounted () {
+  },
   methods: {
     ...mapMutations(['SET_HEADER']),
     setHeader () {
@@ -37,14 +40,21 @@ export default {
 
     /**
      * 上传图片
-     * @param e 包含 file 对象的 fileList 对象
+     * @param {Object} e 包含 file 对象的 fileList 对象
      * 方法1. window.URL.createObjectURL()
      * 方法2. FileReader() 读取文件
+     * $EXIF 获取图片的元数据
      */
     uploadImage (e) {
       let files = e.target.files;
+      // console.log(files[0]);
       if (!files || files.length === 0) return;
       files = Array.from(files);
+      // 获取图片的元数据
+      this.$EXIF.getData(files[0], () => {
+        // 2006/06/13 15:44:45
+        console.log(files[0]);
+      })
       files.forEach(file => {
         // 方法1
         let pic = window.URL.createObjectURL(file);
@@ -62,7 +72,7 @@ export default {
     },
     /**
      * 上传 TEXT 文件
-     * @param e
+     * @param {Object} e 包含 file 对象的 fileList 对象
      */
     uploadText (e) {
       let files = e.target.files[0];

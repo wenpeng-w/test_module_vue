@@ -1,5 +1,5 @@
 <template>
-  <div class="404">404</div>
+  <div class="err">404</div>
 </template>
 
 <script>
@@ -9,5 +9,10 @@
 </script>
 
 <style lang="less" scoped>
-
+.err {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
 </style>

@@ -2,8 +2,8 @@
   <!-- 底部导航栏 -->
   <div class="nav-bar">
     <div class="nav">
-      <router-link :to="item.url" v-for="(item, index) in navs" :key="index" class="nav-item">
-        <img class="nav-icon" :src="routerLink === item.url ? item.icon_active : item.icon" alt="">
+      <router-link class="nav-item" :to="item.url" v-for="(item, index) in navs" :key="index">
+        <img class="nav-icon" :src="routerLink === item.url ? item.icon_active : item.icon">
         <p class="nav-name">{{item.name}}</p>
       </router-link>
     </div>
@@ -18,25 +18,25 @@
         routerLink: '',
         navs: [
           {
-            'name': '首页',
+            'name': 'item1',
             'icon': require('../../assets/image/index.png'),
             'icon_active': require('../../assets/image/index-active.png'),
             'url': '/index'
           },
           {
-            'name': '车队',
+            'name': 'item2',
             'icon': require('../../assets/image/motorcade.png'),
             'icon_active': require('../../assets/image/motorcade-active.png'),
             'url': '/motorcade'
           },
           {
-            'name': '服务',
+            'name': 'item3',
             'icon': require('../../assets/image/service.png'),
             'icon_active': require('../../assets/image/service-active.png'),
             'url': '/service'
           },
           {
-            'name': '我的',
+            'name': 'item4',
             'icon': require('../../assets/image/my.png'),
             'icon_active': require('../../assets/image/my-active.png'),
             'url': '/my'
@@ -71,12 +71,12 @@
       display: flex;
       width: 100%;
       /*height: .98rem;*/
-      padding: .12rem 0;
       border-top: .01rem solid #dedede;
       text-align: center;
       font-size: .24rem;
       .nav-item {
         flex: 1;
+        padding: .12rem 0;
         color: #333;
         .nav-icon {
           display: inline-block;

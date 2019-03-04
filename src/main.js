@@ -8,6 +8,11 @@ import vueXlsxTable from 'vue-xlsx-table';
 import Vant from 'vant';
 import 'vant/lib/vant-css/index.css';
 import './assets/css/main.less';
+import axios from 'axios';
+import EXIF from 'exif-js';
+
+import FastClick from 'fastclick';
+FastClick.attach(document.body);
 
 import VueAMap from 'vue-amap';
 Vue.use(VueAMap);
@@ -19,6 +24,9 @@ VueAMap.initAMapApiLoader({
 Vue.use(vueXlsxTable, {rABS: false});
 Vue.use(Vant);
 Vue.config.productionTip = false;
+Vue.prototype.$axios = axios;
+axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+Vue.prototype.$EXIF = EXIF;
 
 /* eslint-disable no-new */
 new Vue({

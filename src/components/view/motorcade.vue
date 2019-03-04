@@ -13,9 +13,10 @@
       this.setHeader();
     },
     methods: {
-      ...mapMutations(['SET_HEADER']),
+      ...mapMutations(['SET_HEADER', 'SET_USER']),
       setHeader () {
         this.SET_HEADER('车队');
+        this.SET_USER({name: 'vuex', age: 20, job: 'Front-end engineer'});
       }
     }
   };
